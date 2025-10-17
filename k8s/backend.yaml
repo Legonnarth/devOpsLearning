@@ -35,3 +35,15 @@ spec:
               value: "postgres://humor:humorpass@postgres:5432/humor"
             - name: REDIS_URL
               value: "redis://redis:6379"
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+              limits:
+              memory: "512Mi"
+              cpu: "500m"
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 1000
+              
